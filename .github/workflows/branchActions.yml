@@ -1,0 +1,20 @@
+name: Branch Events
+
+on:
+    push:
+        branches:
+            - main
+            - dev
+    pull_request:
+        branches:
+            - main
+jobs:
+    branch_event_hello:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Branch Event echo"
+              run: |
+                echo "Branch event current time is $(date)"
+                echo "Job ID: $GITHUB_JOB"
+                echo "Action name: $GITHUB_ACTION"
+                echo "Actor: $GITHUB_ACTOR"
