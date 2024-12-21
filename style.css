@@ -1,0 +1,20 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+h1 {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 5rem;
+    text-shadow: 2px 2px 2px #fff;
+}
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    border-radius: 5%;
+}
