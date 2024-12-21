@@ -1,0 +1,10 @@
+name: 5 min check
+on: 
+    schedule:
+        - cron: '*/5 * * * *'
+jobs:
+    hello_world_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Hello world
+              run: echo "Hello world current time is $(date)"
