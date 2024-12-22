@@ -1,0 +1,28 @@
+{
+  "name": "gha-ejercicio",
+  "version": "1.0.0",
+  "description": "just an exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/marcelaobeso/gha-ejercicios.git"
+  },
+  "keywords": [
+    "github",
+    "actions",
+    "example"
+  ],
+  "author": "marcelaobeso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcelaobeso/gha-ejercicios/issues"
+  },
+  "homepage": "https://github.com/marcelaobeso/gha-ejercicios#readme",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}
