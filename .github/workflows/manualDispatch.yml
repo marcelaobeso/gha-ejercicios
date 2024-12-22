@@ -28,6 +28,8 @@ jobs:
     steps:
       - name: Greeting
         run: echo "Hello ${{ inputs.name }}! ${{ inputs.greeting }}"
+      - name: Checkout repository
+        uses: actions/checkout@v2
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
