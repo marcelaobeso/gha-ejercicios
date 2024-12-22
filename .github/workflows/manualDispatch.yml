@@ -1,0 +1,31 @@
+name: Manual Test Dispatch
+
+on:
+  push:
+    branches:
+      - main
+      -dev
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Name of the person to greet'
+        required: true
+        type: string
+        default: 'Mona the Octocat'
+      greeting:
+        description: 'Type of greeting'
+        required: true
+        type: string
+        default: 'How are you doing today?'
+      test:
+        description: 'Test to run'
+        required: true
+        default: 'unit'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greeting
+        run: echo "Hello ${{ inputs.name }}! ${{ inputs.greeting }}"
+      - name: Run test
+        run: npm run test
