@@ -1,0 +1,34 @@
+name: 'Publish something'
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        type: environment
+        default: 'staging'
+        required: true
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run tests
+        run: npm test
+  deploy:
+    name: Deploy
+    needs: test
+    permissions:
+      contents: read
+      id-token: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Deploy to ${{ github.event.inputs.environment }}
+        run: echo "Deploying to ${{ github.event.inputs.environment }}"
